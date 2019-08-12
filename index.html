@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <script src="jquery-3.1.1.min.js"></script>
+        <script src="FormUtils.js"></script>
+    </head>
+    <body>
+        <form method="post" enctype="multipart/form-data">
+            <select multiple name="mdropdown" id="mdropdown">
+                <option value="1">Value 1</option>
+                <option value="2">Value 2</option>
+                <option value="3">Value 3</option>
+                <option value="4">Value 4</option>
+                <option value="5">Value 5</option>
+                <option value="6">Value 6</option>
+            </select>
+            <input type="radio" name="o" value="1"> 1
+            <input type="radio" name="o" value="2"> 2
+            <input type="radio" name="o" value="3"> 3
+
+            <input type="checkbox" name="s[]" value="1"> 1
+            <input type="checkbox" name="s[]" value="2"> 2
+            <input type="checkbox" name="s[]" value="3"> 3
+
+            <input type="text"  name="xxx" disabled value="Disabled Field">
+            <textarea name="yyy">adfasdf</textarea>
+
+            <p><label for="email">Your Email: </label> <input type="text" id="email" name="email222"></p>
+            <p><label for="avatar-file"><input multiple type="file" name="avatar[]" id="avatar-file"></label></p>
+            <p><button type="submit">Submit</button></p>
+        </form>
+        <script>
+            $(document.forms[0]).on('submit', function (e) {
+                e.preventDefault();
+
+                FormUtils.formToJson(this).then(function (json) {
+                    console.log('JSON: ', json);
+                    var formData = FormUtils.jsonToFormData(json);
+                    console.log('FormData: ', formData);
+                });
+            });
+        </script>
+    </body>
+</html>
