@@ -1,7 +1,7 @@
 
-# FormDataToJSON Transformer
+# JavaScript FormData<->JSON Transformer
 
-This repository introduces a utility class that allows you to transform a `FormData` object to a `JSON` object, or vice versa. This utility comes in handy when you need to store form data in the end user's device. There are possibly following use cases:
+This repository introduces a utility class that allows you to transform a `FormData` object to a `JSON` object, or vice versa. This utility comes in handy when you need to store any form data, in the end user's device. There are possibly following use cases:
 * Store the form data in the user's device temporarily using the `LocalStorage` object.
 * For hybrid mobile apps with an offline capability, store the form data in the user's device in the offline mode as text files then submit the form as soon as the user gets online. 
 
