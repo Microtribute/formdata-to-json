@@ -2,7 +2,6 @@
 <html>
     <head>
         <title></title>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="FormUtils.js"></script>
         <style>
             .info {
@@ -39,7 +38,7 @@
             <p><button type="submit">Submit</button></p>
         </form>
         <script>
-            $(document.forms[0]).on('submit', function (e) {
+            document.forms[0].onsubmit = function (e) {
                 e.preventDefault();
 
                 FormUtils.formToJson(this).then(function (json) {
@@ -47,7 +46,9 @@
                     var formData = FormUtils.jsonToFormData(json);
                     console.log('FormData: ', formData);
                 });
-            });
+
+                return false;
+            };
         </script>
     </body>
 </html>
