@@ -2,10 +2,18 @@
 <html>
     <head>
         <title></title>
-        <script src="jquery-3.1.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="FormUtils.js"></script>
+        <style>
+            .info {
+                color: red;
+                font-weight: bold;
+                font-style: italic;
+            }
+        </style>
     </head>
     <body>
+        <h2 class="info">* Fill in the form and click the Submit button. Check the console output.</h2>
         <form method="post" enctype="multipart/form-data">
             <select multiple name="mdropdown" id="mdropdown">
                 <option value="1">Value 1</option>
